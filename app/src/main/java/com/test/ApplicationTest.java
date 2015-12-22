@@ -58,6 +58,7 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MapsActivi
 
     public void testStartingEmpty() {
         TouchUtils.clickView(this, fab);
+        assertNotNull(activity.mMap);
 
     }
 
