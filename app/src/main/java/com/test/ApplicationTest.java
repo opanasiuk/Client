@@ -4,9 +4,11 @@ import android.support.design.widget.FloatingActionButton;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.TouchUtils;
 import android.test.ViewAsserts;
+import android.widget.EditText;
 
 import com.example.alexander.road.R;
 import com.google.android.gms.maps.GoogleMap;
+import com.road.GoogleDirection;
 import com.road.MapsActivity;
 
 /**
@@ -18,7 +20,9 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MapsActivi
     FloatingActionButton fab;
     MapsActivity activity;
     GoogleMap map;
+    String apikey;
 
+    GoogleDirection gd;
 
     public ApplicationTest() {
         super("com.example.alexander", MapsActivity.class);
@@ -28,15 +32,17 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MapsActivi
     protected void setUp() throws Exception {
         // TODO Auto-generated method stub
         super.setUp();
-    activity = getActivity();
-    fab = (FloatingActionButton) activity.findViewById(R.id.fab);
-    map = activity.mMap;
-
-}
+        activity = getActivity();
+        fab = (FloatingActionButton) activity.findViewById(R.id.fab);
+        map = activity.mMap;
+        apikey = activity.ApiKey;
+        gd = activity.gd;
+    }
 
     public void testActivityNotNull() {
         assertNotNull(activity);
     }
+
     public void testFABNotNull() {
         assertNotNull(fab);
     }
@@ -51,9 +57,7 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MapsActivi
 
 
     }
-    public void testLocation() {
-        assertEquals(activity.getLastBestLocation(), activity.getLastBestLocation());
-    }
+
 
 
     public void testStartingEmpty() {
@@ -61,10 +65,19 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MapsActivi
         assertNotNull(activity.mMap);
 
     }
+
+
     public void testAPIKey() {
         assertEquals("AIzaSyCYpA4RVDcQApm204s1YykQmUXcttEqj1A", apikey);
     }
-    public void testNullGoogleDirection() { 
-        assertNotNull(gd); 
-}
+
+    public void testNullGoogleDirection() {
+        assertNotNull(gd);
+    }
+
+    public void testLocation() {
+        assertNotNull(activity.getLastBestLocation());
+    }
+
+
 }
