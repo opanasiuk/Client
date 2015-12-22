@@ -64,5 +64,7 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MapsActivi
     public void testAPIKey() {
         assertEquals("AIzaSyCYpA4RVDcQApm204s1YykQmUXcttEqj1A", apikey);
     }
-
+    public void testNullGoogleDirection() { 
+        assertNotNull(gd); 
+}
 }
