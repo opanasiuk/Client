@@ -30,12 +30,12 @@ import java.util.ArrayList;
 
 public class MapsActivity extends FragmentActivity implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener {
 
-    String ApiKey = "AIzaSyCYpA4RVDcQApm204s1YykQmUXcttEqj1A";
+    public String ApiKey = "AIzaSyCYpA4RVDcQApm204s1YykQmUXcttEqj1A";
 
     public GoogleMap mMap;
-    GoogleDirection gd;
-    Document mDoc;
-    FloatingActionButton fab;
+    public GoogleDirection gd;
+    public Document mDoc;
+    public FloatingActionButton fab;
 
     AlertDialog.Builder alertBuilder;
     View view;
