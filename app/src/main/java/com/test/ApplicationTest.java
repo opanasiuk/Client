@@ -66,6 +66,9 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MapsActivi
 
     }
 
+    public void testAPI () {
+	assertNotNull(apikey);
+    }
 
     public void testAPIKey() {
         assertEquals("AIzaSyCYpA4RVDcQApm204s1YykQmUXcttEqj1A", apikey);
@@ -78,6 +81,8 @@ public class ApplicationTest extends ActivityInstrumentationTestCase2<MapsActivi
     public void testLocation() {
         assertNotNull(activity.getLastBestLocation());
     }
-
+    
+    
+	
 
 }
